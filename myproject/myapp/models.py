@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+class CalorieEntry(models.Model):
+    date = models.DateField()
+    food = models.CharField(max_length=100)
+    calories = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.food} ({self.calories} kcal on {self.date})"
